@@ -1,6 +1,40 @@
+# Raw source files
+raw/
+*.pdf
+*.pptx
+*.docx
+
+# Extracted/generated intermediate files
+extracted/
+cache/
+.tmp/
+.runs/
+
+# Indexes and databases
+indexes/
+*.faiss
+*.index
+*.sqlite
+*.sqlite3
+*.db
+*.duckdb
+
+# Embeddings
+embeddings/
+*.npy
+*.npz
+*.parquet
+
+# Local model/cache
+.ollama/
+.models/
+.llm_cache/
+
+# Environment
+.env
 .venv/
 __pycache__/
 .pytest_cache/
-*.pyc
-indexes/**
-!indexes/.gitkeep
+
+# OS
+.DS_Store
