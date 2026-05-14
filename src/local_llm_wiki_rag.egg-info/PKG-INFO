@@ -1,0 +1,33 @@
+Metadata-Version: 2.4
+Name: local-llm-wiki-rag
+Version: 0.1.0
+Summary: Local LLM Wiki + RAG system
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: pydantic>=2.0
+Requires-Dist: pyyaml
+Requires-Dist: typer
+Requires-Dist: rich
+Requires-Dist: numpy
+Requires-Dist: scikit-learn
+Requires-Dist: pypdf
+Requires-Dist: networkx
+Requires-Dist: rank-bm25
+Requires-Dist: httpx
+Requires-Dist: pytest
+
+# local-llm-wiki-rag
+
+Local-first source-grounded Markdown Wiki + RAG system.
+
+## Quick start
+
+```bash
+python -m venv .venv && source .venv/bin/activate
+pip install -e .
+python scripts/ingest.py raw/meetings/sample.md --type meeting
+python scripts/build_wiki.py --source <doc_id>
+python scripts/build_graph.py
+python scripts/build_indexes.py
+python scripts/query.py "What is this project about?"
+```

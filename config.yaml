@@ -1,0 +1,33 @@
+project:
+  root: .
+llm:
+  backend: ollama
+  model: qwen3:8b
+  temperature: 0.1
+  max_tokens: 4096
+  context_window: 32768
+embedding:
+  backend: sentence_transformers
+  model: BAAI/bge-m3
+  batch_size: 16
+reranker:
+  backend: sentence_transformers
+  model: BAAI/bge-reranker-v2-m3
+  enabled: true
+chunking:
+  target_tokens: 800
+  overlap_tokens: 120
+  preserve_sections: true
+retrieval:
+  wiki_top_k: 10
+  source_top_k: 20
+  bm25_top_k: 20
+  rerank_top_k: 12
+  graph_hops: 2
+verification:
+  enabled: true
+  min_support_score: 0.65
+storage:
+  sqlite_path: metadata/llm_wiki.sqlite
+  vector_backend: faiss
+  graph_backend: sqlite
